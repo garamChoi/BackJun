@@ -1,0 +1,35 @@
+#define _CRT_SECURE_NO_WARNINGS
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int main(void)
+{
+	int month, day;
+	int i, j;
+	int sum = 0;
+	scanf("%d %d", &month, &day);
+	for (i = 1; i <= month - 1; i++)
+	{
+		if ((i <= 7 && i % 2 == 1) || (i >= 8 && i % 2 == 0))
+			sum += 31;
+		else if (i == 2)
+			sum += 28;
+		else
+			sum += 30;
+	}
+	sum += day;
+	
+	switch (sum % 7) {
+	case 0: printf("SUN"); break;
+	case 1: printf("MON"); break;
+	case 2: printf("TUE"); break;
+	case 3: printf("WED"); break;
+	case 4: printf("THR"); break;
+	case 5: printf("FRI"); break;
+	case 6: printf("SAT"); break;
+	}
+	return 0;
+}
+
+// find out month and day
