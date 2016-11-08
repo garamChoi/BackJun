@@ -1,0 +1,18 @@
+#define _CRT_SECURE_NO_WARNINGS
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int main(void)
+{
+	int n;
+	int i;
+
+	scanf("%d", &n);
+
+	for (i = n; i >= 1; i--)   // 1까지만 출력한다.  처음값과 끝 값을 설정을 해줘야 한다.
+		printf("%d\n", i);       // for문 사용시 초깃값과 끝값을 지정을 해주어야 한다.
+	                            // 끝 값은 조건문에 써준다.
+
+	return 0;
+}
