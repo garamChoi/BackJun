@@ -1,0 +1,15 @@
+#define _CRT_SECURE_NO_WARNINGS
+
+#include<stdio.h>
+
+int main(void)
+{
+	double a, b;
+	scanf("%lf %lf", &a, &b);
+
+	printf("%.9lf\n", a/b); //  %.9lf 이렇게 적으면 소수점 9번째 짜리까지 출력한다.
+	                        // %.mlf 소수점 m 번쨰 까지 출력한다. 
+
+	return 0;
+}
+//어떻게 9자리 이상 출력하는 것이 씨언어에 있나요...
