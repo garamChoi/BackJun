@@ -1,0 +1,52 @@
+#define _CRT_SECURE_NO_WARNINGS
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+#include<math.h>
+#include<ctype.h>
+
+int main(void)
+{
+	int i;
+	int a[3];
+	int m=1;        // 곱셉은 1부터 시작됨 그래서 초기화를 0으로 해주지 않아도 됨
+	char str[100];
+	int l;
+	int count[10] = { 0 };
+	
+	
+	for (i = 0; i < 3; i++)
+	{
+		scanf("%d", &a[i]);
+		
+		m = m * a[i];
+	}
+
+	i = 0;
+	
+	while (m > 0)
+	{
+		str[i] = (m % 10) + '0';
+		m = m / 10;
+		i++;
+	}
+
+	str[i] = '\0';   // Null은 문자 하나로 인식한다. 이것을 한 이유는 문자 배열의 끝을 지정해 주기 위함이다.
+	// 이렇게 한 이유는 끝을 지정해 주지 않으면 길이가 무한한 값을 출력한다.
+
+	l = strlen(str);
+
+
+
+	for (i = 0; i < l; i++)
+	{
+		count[str[i]-'0']++; // str[i]에는 문자들이 들어가 있다. 문자를 인덱스를 넣으면 안된다. 그래서 문자를 숫자로 바꿔서 인덱스에 넣었다.
+	}
+	
+	for (i = 0; i < 10; i++)
+	{
+		printf("%d\n", count[i]);
+	}
+	return 0;
+}
