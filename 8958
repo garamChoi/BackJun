@@ -1,0 +1,46 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+#include<math.h>
+#include<ctype.h>
+
+int main(void)
+{
+	int i, j;
+	int n;
+	char array[80];  // 위에서 몇까지만 입력하라고 정해 주었으니까 80이라고 적을 수 있다.
+	int l;
+	int addvalue;
+	int sum = 0;
+
+	scanf("%d", &n);
+
+	for (i = 1; i <= n; i++)
+	{
+
+		scanf("%s", array);
+		
+		l = strlen(array);
+
+		addvalue = 0;   //  초기화를 여기서 한 이유는 원래 0부터 시작해야 하는 변수이다.
+		sum = 0;       // 그런데 FOR문 안에서 썻다는 것 테스트 케이스마다 매번 해야 하기 때문이다.
+
+		for (j = 0; j < l; j++)
+		{
+			if (array[j] == 'X')
+			{
+				addvalue = 0;
+				sum += 0;
+			}
+			else if (array[j] == 'O')
+			{
+				addvalue = addvalue + 1;
+				sum = sum + addvalue;  //  각각 점수 계산 하기 위해서 이렇게 만든 것 
+			}
+		}
+		printf("%d\n", sum);
+	}
+
+	return 0;
+}
