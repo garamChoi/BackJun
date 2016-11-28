@@ -1,0 +1,16 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+#include<math.h>
+#include<ctype.h>
+
+int main(void)
+{
+	char c;
+
+	scanf("%c", &c);
+	printf("%d\n", c);     // ACSII Code 출력하기!!
+
+	return 0;
+}
