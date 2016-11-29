@@ -1,0 +1,39 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+#include<math.h>
+#include<ctype.h>
+
+int main(void)
+{
+	char c[101];  // 문자열을 넣기 위해서 배열을 선언해서 넣어주어야한다.
+					 //마지막 문자 NULL 문자를 넣어주어야 한다.
+	int s;
+	int i, j;
+	int flag;
+
+	scanf("%s", c);
+
+	s = strlen(c);
+
+	for (j = 'a'; j <= 'z'; j++)
+	{
+		flag = 0;              //  flag를 사용하여서 for안에 있던 상황이		
+								// for문 밖에서의 영향을 끼친다.
+		for (i = 0; i < s; i++)
+		{
+			if (c[i] == j) {
+				printf("%d ", i);
+				flag = 1;
+				break;           // 가장 가까운 loop (for)문 하나를 나간다.
+			}
+		}
+		if(flag==0)
+			printf("-1 ");
+	}
+	printf("\n");
+
+	return 0;
+
+}
